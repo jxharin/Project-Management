@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useState } from 'react';
 
-import NewProject from "./components/NewProject.jsx";
-import NoProjectSelected from "./components/NoProjectSelected.jsx";
-import ProjectsSidebar from "./components/ProjectsSidebar.jsx";
-import SelectedProject from "./components/SelectedProject.jsx";
+import NewProject from './components/NewProject.jsx';
+import NoProjectSelected from './components/NoProjectSelected.jsx';
+import ProjectsSidebar from './components/ProjectsSidebar.jsx';
+import SelectedProject from './components/SelectedProject.jsx';
 
 function App() {
   const [projectsState, setProjectsState] = useState({
@@ -27,6 +27,7 @@ function App() {
       };
     });
   }
+
   function handleDeleteTask(id) {
     setProjectsState((prevState) => {
       return {
@@ -119,6 +120,7 @@ function App() {
         onStartAddProject={handleStartAddProject}
         projects={projectsState.projects}
         onSelectProject={handleSelectProject}
+        selectedProjectId={projectsState.selectedProjectId}
       />
       {content}
     </main>
